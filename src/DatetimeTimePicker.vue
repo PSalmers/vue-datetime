@@ -45,7 +45,7 @@ export default {
     maxTime: {
       type: String,
       default: null
-    }
+    },
   },
 
   computed: {
