@@ -159,78 +159,77 @@ export default {
       return this.newDatetime.day
     },
     hour () {
-
-      if(
+      if (
         this.maxDatetime &&
         this.day === this.maxDatetime.day &&
         this.month === this.maxDatetime.month &&
         this.year === this.maxDatetime.year
         ) {
-          if(
+        if (
             this.timePartsTouched['hour'] === false
           ) {
-            return this.maxDatetime.hour
-          }
-          if( this.newDatetime.hour > this.maxDatetime.hour ) {
-            return this.maxDatetime.hour
-          }
-          return this.newDatetime.hour
+          return this.maxDatetime.hour
         }
+        if (this.newDatetime.hour > this.maxDatetime.hour) {
+          return this.maxDatetime.hour
+        }
+        return this.newDatetime.hour
+      }
 
-      if( 
+      if (
         this.minDatetime &&
         this.day === this.minDatetime.day &&
         this.month === this.minDatetime.month &&
         this.year === this.minDatetime.year
       ) {
-          if(
+        if (
             this.timePartsTouched['hour'] === false
           ) {
-            return this.maxDatetime.hour
-          }
-          if( this.newDatetime.hour < this.minDatetime.hour ) {
-            return this.minDatetime.hour
-          }
-          return this.newDatetime.hour
+          return this.maxDatetime.hour
+        }
+        if (this.newDatetime.hour < this.minDatetime.hour) {
+          return this.minDatetime.hour
+        }
+        return this.newDatetime.hour
       }
 
       return this.newDatetime.hour
     },
     minute () {
-      if(
+      if (
         this.maxDatetime &&
         this.day === this.maxDatetime.day &&
         this.month === this.maxDatetime.month &&
         this.year === this.maxDatetime.year &&
         this.hour === this.maxDatetime.hour
         ) {
-          if(
+        if (
             this.timePartsTouched['minute'] === false
           ) {
-            return this.maxDatetime.minute
-          }
-          if( this.newDatetime.minute > this.maxDatetime.minute ) {
-            return this.maxDatetime.minute
-          }
-          return this.newDatetime.minute
+          return this.maxDatetime.minute
         }
+        if (this.newDatetime.minute > this.maxDatetime.minute) {
+          return this.maxDatetime.minute
+        }
+        return this.newDatetime.minute
+      }
 
-      if( 
+      if (
         this.minDatetime &&
         this.day === this.minDatetime.day &&
         this.month === this.minDatetime.month &&
         this.year === this.minDatetime.year &&
         this.hour === this.minDatetime.hour
       ) {
-          if(
+        if (
             this.timePartsTouched['minute'] === false
           ) {
-            return this.minDatetime.minute
-          }
-          if( this.newDatetime.minute < this.minDatetime.minute ) {
-            return this.minDatetime.minute
-          }
-          return this.newDatetime.minute
+          return this.minDatetime.minute
+        }
+        if (this.newDatetime.minute < this.minDatetime.minute) {
+          return this.minDatetime.minute
+        }
+        return this.newDatetime.minute
       }
       return this.newDatetime.minute
     },
@@ -251,7 +250,7 @@ export default {
         this.minDatetime &&
         this.minDatetime.year === this.year &&
         this.minDatetime.month === this.month &&
-        this.minDatetime.day === this.day 
+        this.minDatetime.day === this.day
       ) ? this.minDatetime.toFormat('HH:mm') : null
     },
     maxTime () {
